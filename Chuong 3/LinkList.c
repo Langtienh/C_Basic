@@ -109,6 +109,11 @@ int count(node * l){
     return n;
 }
 
+node * giaiPhongLish(node * l){
+    while (l != NULL) popBack(l);
+    return NULL;
+}
+
 int main(){
     printf("-----------------------------------------------\n");
     printf("0: Thoat chuong trinh\n");
@@ -125,7 +130,10 @@ int main(){
     int t, v;
     while (1){
         scanf("%d", &t);
-        if (t == 0) return 0;
+        if (t == 0) {
+            l = giaiPhongLish(l);
+            return 0;
+        }
         switch(t){
             case 1:
                 l = scanList(l);
